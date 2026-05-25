@@ -1,0 +1,47 @@
+{
+  "status": "ok",
+  "date": "2026-05-25",
+  "picks": [
+    {
+      "rank": 1,
+      "code": "600637",
+      "name": "东方明珠",
+      "price": 10.4,
+      "pct": 10.0,
+      "turnover": 11.39,
+      "reasons": [
+        "多头排列"
+      ],
+      "ma5": 10.32,
+      "ma20": 10.23,
+      "ma60": 10.15,
+      "vol_ratio": 0.74,
+      "dist_to_high": 10.5,
+      "support": 10.23,
+      "target_1": 10.92,
+      "target_2": 11.44,
+      "stop_loss": 10.09
+    },
+    {
+      "rank": 2,
+      "code": "002674",
+      "name": "兴业科技",
+      "price": 14.52,
+      "pct": 9.99,
+      "turnover": 14.77,
+      "reasons": [
+        "多头排列",
+        "即将突破前高(14.67元)"
+      ],
+      "ma5": 14.27,
+      "ma20": 13.78,
+      "ma60": 13.52,
+      "vol_ratio": 0.82,
+      "dist_to_high": 1.0,
+      "support": 13.78,
+      "target_1": 15.25,
+      "target_2": 15.97,
+      "stop_loss": 13.78
+    }
+  ]
+}

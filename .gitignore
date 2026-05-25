@@ -1,0 +1,17 @@
+﻿# Virtual environment
+.venv/
+__pycache__/
+*.pyc
+.DS_Store
+
+# Data files (keep structure, not raw data)
+data/*.duckdb
+data/*.duckdb.wal
+data/cache/
+
+# Local config
+*.local.json
+.env
+
+# OS files
+Thumbs.db
