@@ -37,12 +37,23 @@ def _req(url, headers=None, timeout=REQUEST_TIMEOUT):
 
 # ── 数据源：腾讯行情（最稳定）────────────────────
 
+def _normalize_code(code):
+    """补全前缀：300230 -> sz300230, 600519 -> sh600519"""
+    code = str(code).strip()
+    if code.startswith("sh") or code.startswith("sz"):
+        return code
+    if code.startswith("6") or code.startswith("5"):
+        return f"sh{code}"
+    return f"sz{code}"
+
 def tencent_quote(codes):
-    """获取实时行情，codes = ['sz300230','sz000612','sh600519']
+    """获取实时行情，codes = ['sz300230','000612','600519']
+    自动补全前缀。
     返回 dict: {code: {name, price, prev_close, change, change_pct, high, low, volume, turnover, pe, ...}}
     """
     if isinstance(codes, str):
         codes = [codes]
+    codes = [_normalize_code(c) for c in codes]
     url = f"http://qt.gtimg.cn/q={','.join(codes)}"
     raw = _req(url)
     result = {}
@@ -54,6 +65,9 @@ def tencent_quote(codes):
         if len(parts) < 40:
             continue
         code = parts[2]
+        # Strip prefix for consistent keys
+        if code.startswith("sh") or code.startswith("sz"):
+            code = code[2:]
         try:
             d = {
                 "name": parts[1],
