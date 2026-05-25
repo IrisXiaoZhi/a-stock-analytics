@@ -1,0 +1,17 @@
+akshare>=1.17.0
+tushare>=1.4.0
+baostock>=0.8.9
+pandas>=2.2.0
+numpy>=1.26.0
+duckdb>=1.0.0
+pyarrow>=15.0.0
+matplotlib>=3.8.0
+plotly>=5.20.0
+backtrader>=1.9.78.123
+requests>=2.31.0
+beautifulsoup4>=4.12.0
+lxml>=5.0.0
+openpyxl>=3.1.0
+ta>=0.11.0
+rich>=13.7.0
+typer>=0.12.0

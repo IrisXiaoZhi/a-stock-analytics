@@ -1,0 +1,26 @@
+{
+  "date": "2026-05-25",
+  "quotes": {
+    "300230": {
+      "name": "永利股份",
+      "price": null,
+      "change_pct": null,
+      "turnover": null,
+      "pe": null
+    },
+    "000612": {
+      "name": "焦作万方",
+      "price": null,
+      "change_pct": null,
+      "turnover": null,
+      "pe": null
+    },
+    "002996": {
+      "name": "顺博合金",
+      "price": null,
+      "change_pct": null,
+      "turnover": null,
+      "pe": null
+    }
+  }
+}
