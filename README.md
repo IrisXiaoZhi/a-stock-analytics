@@ -1,37 +1,37 @@
-# A Stock Kit for OpenClaw
+﻿# A-Stock Analytics 🦞
 
-This local kit supports OpenClaw skills for China A-share research. It is for analysis, journaling, screening, and risk checks. It does not place orders or control a broker app.
+A股行情分析与量化策略回测工具，由 AI 助手小龙虾维护。
 
-## Runtime
+## 功能
 
-Use the bundled virtual environment:
+- 📊 **行情数据获取** — BaoStock / AkShare 双数据源，支持日K线、实时行情
+- 📈 **技术分析指标** — MA、MACD、RSI、布林带、量价分析
+- 🌡️ **市场情绪监测** — 涨跌比、涨停跌停、成交额、四大指数快照
+- 💰 **资金流向追踪** — 主力资金、北向资金、板块资金排名
+- 🏆 **D1快枪选股** — 盘中扫描热点板块，筛选短线标的
+- 📋 **盘前分析报告** — 开盘前自动生成深度研报
+- ⚠️ **风险雷达** — ST/退市/解禁/质押/财务风险一票否决
+- 🔄 **策略回测** — 基于历史K线的量化策略回测框架
 
-```powershell
-C:\Users\Administrator\.openclaw\a-stock-kit\.venv\Scripts\python.exe C:\Users\Administrator\.openclaw\a-stock-kit\scripts\a_stock_tool.py --help
-```
+## 快速开始
 
-## Common commands
+`ash
+# 安装依赖
+pip install -r requirements.txt
 
-```powershell
-# Fetch recent history and indicators
-python scripts\a_stock_tool.py history 600519 --days 120
-python scripts\a_stock_tool.py indicators 600519 --days 180
+# 获取个股历史行情
+python scripts/a_stock_tool.py history 300230 --days 120
 
-# Risk scan
-python scripts\a_stock_tool.py risk 600519
+# 技术指标分析
+python scripts/a_stock_tool.py indicators 300230 --days 260
 
-# Moving average backtest
-python scripts\a_stock_tool.py backtest-ma 600519 --fast 20 --slow 60 --days 900
+# 市场情绪扫描
+python scripts/a_stock_extended.py sentiment
 
-# Watchlist
-python scripts\a_stock_tool.py watchlist-add core 600519 贵州茅台
-python scripts\a_stock_tool.py watchlist-scan core
+# 资金流向
+python scripts/a_stock_extended.py fund-flow --type individual
+`
 
-# Journal
-python scripts\a_stock_tool.py journal-add 600519 buy 100 1800 --reason "test plan"
-python scripts\a_stock_tool.py journal-list
-```
-
-## Data notes
-
-Data sources such as AkShare may change endpoints or field names. Treat output as decision support, not a trading instruction. Always verify important numbers with the broker, exchange, or official announcement.
+## 注意
+- 数据源可能延迟或变更，交易决策请以券商软件为准
+- 本工具仅供学习研究，不构成投资建议
